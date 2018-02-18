@@ -8,3 +8,17 @@ c:\users\alejandro\documents\visual studio 2017\Projects\HumanResources\HumanRes
 c:\users\alejandro\documents\visual studio 2017\Projects\HumanResources\HumanResources\obj\Debug\HumanResources.exe
 c:\users\alejandro\documents\visual studio 2017\Projects\HumanResources\HumanResources\obj\Debug\HumanResources.pdb
 c:\users\alejandro\documents\visual studio 2017\Projects\HumanResources\HumanResources\obj\Debug\HumanResources.Login.resources
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\bin\Debug\HumanResources.exe.config
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\bin\Debug\HumanResources.exe
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\bin\Debug\HumanResources.pdb
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\obj\Debug\HumanResources.csprojResolveAssemblyReference.cache
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\obj\Debug\HumanResources.Login.resources
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\obj\Debug\HumanResources.Properties.Resources.resources
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\obj\Debug\HumanResources.csproj.GenerateResource.Cache
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\obj\Debug\HumanResources.csproj.CoreCompileInputs.cache
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\obj\Debug\HumanResources.exe
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\obj\Debug\HumanResources.pdb
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\bin\Debug\EntityFramework.dll
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\bin\Debug\EntityFramework.xml
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\bin\Debug\EntityFramework.SqlServer.xml
