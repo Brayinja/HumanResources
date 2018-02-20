@@ -41,6 +41,47 @@ namespace HumanResources.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_AdminLogin", usernameParameter, passwordParameter, responseMessage, idAdmin);
         }
     
+        public virtual int PR_CrateEmployee(Nullable<decimal> identification, string name, string lastname, string email, string phone, string gender, string maritalState, string adress, Nullable<System.DateTime> birthdate, ObjectParameter responseMessage)
+        {
+            var identificationParameter = identification.HasValue ?
+                new ObjectParameter("Identification", identification) :
+                new ObjectParameter("Identification", typeof(decimal));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var lastnameParameter = lastname != null ?
+                new ObjectParameter("Lastname", lastname) :
+                new ObjectParameter("Lastname", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("Phone", phone) :
+                new ObjectParameter("Phone", typeof(string));
+    
+            var genderParameter = gender != null ?
+                new ObjectParameter("Gender", gender) :
+                new ObjectParameter("Gender", typeof(string));
+    
+            var maritalStateParameter = maritalState != null ?
+                new ObjectParameter("MaritalState", maritalState) :
+                new ObjectParameter("MaritalState", typeof(string));
+    
+            var adressParameter = adress != null ?
+                new ObjectParameter("Adress", adress) :
+                new ObjectParameter("Adress", typeof(string));
+    
+            var birthdateParameter = birthdate.HasValue ?
+                new ObjectParameter("Birthdate", birthdate) :
+                new ObjectParameter("Birthdate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_CrateEmployee", identificationParameter, nameParameter, lastnameParameter, emailParameter, phoneParameter, genderParameter, maritalStateParameter, adressParameter, birthdateParameter, responseMessage);
+        }
+    
         public virtual int PR_CreateAdmin(string userName, string password, ObjectParameter responseMessage)
         {
             var userNameParameter = userName != null ?
@@ -52,6 +93,11 @@ namespace HumanResources.Model
                 new ObjectParameter("Password", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_CreateAdmin", userNameParameter, passwordParameter, responseMessage);
+        }
+    
+        public virtual ObjectResult<PR_ViewEmployees_Result> PR_ViewEmployees()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PR_ViewEmployees_Result>("PR_ViewEmployees");
         }
     }
 }

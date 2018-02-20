@@ -70,6 +70,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HumanResourcesModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\PR_ViewEmployees_Result.cs">
+      <DependentUpon>HumanResourcesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RandyOrton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RandyOrton.Designer.cs">
+      <DependentUpon>RandyOrton.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="RandyOrton.resx">
+      <DependentUpon>RandyOrton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,10 +123,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
   <ItemGroup>
     <Content Include="Model\HumanResourcesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -126,6 +134,9 @@
       <DependentUpon>HumanResourcesModel.edmx</DependentUpon>
       <LastGenOutput>HumanResourcesModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

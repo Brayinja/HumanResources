@@ -22,3 +22,4 @@ C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\b
 C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\bin\Debug\EntityFramework.xml
 C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jhordan\Documents\GitHub\HumanResources\HumanResources\HumanResources\obj\Debug\HumanResources.RandyOrton.resources

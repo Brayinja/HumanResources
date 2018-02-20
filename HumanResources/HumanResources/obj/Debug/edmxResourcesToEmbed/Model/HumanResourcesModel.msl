@@ -2,6 +2,17 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="HumanResourcesModelStoreContainer" CdmEntityContainer="HumanResourcesEntities">
     <FunctionImportMapping FunctionImportName="PR_AdminLogin" FunctionName="HumanResourcesModel.Store.PR_AdminLogin" />
+    <FunctionImportMapping FunctionImportName="PR_CrateEmployee" FunctionName="HumanResourcesModel.Store.PR_CrateEmployee" />
     <FunctionImportMapping FunctionImportName="PR_CreateAdmin" FunctionName="HumanResourcesModel.Store.PR_CreateAdmin" />
+    <FunctionImportMapping FunctionImportName="PR_ViewEmployees" FunctionName="HumanResourcesModel.Store.PR_ViewEmployees">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HumanResourcesModel.PR_ViewEmployees_Result">
+          <ScalarProperty Name="Identification" ColumnName="Identification" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

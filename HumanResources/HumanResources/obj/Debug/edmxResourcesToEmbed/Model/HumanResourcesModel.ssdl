@@ -6,10 +6,23 @@
     <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
     <Parameter Name="IdAdmin" Type="int" Mode="InOut" />
   </Function>
+  <Function Name="PR_CrateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Identification" Type="numeric" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="Lastname" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Phone" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Gender" Type="varchar" Mode="In" />
+    <Parameter Name="MaritalState" Type="varchar" Mode="In" />
+    <Parameter Name="Adress" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Birthdate" Type="date" Mode="In" />
+    <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
+  </Function>
   <Function Name="PR_CreateAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="UserName" Type="varchar" Mode="In" />
     <Parameter Name="Password" Type="varchar(max)" Mode="In" />
     <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
   </Function>
+  <Function Name="PR_ViewEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="HumanResourcesModelStoreContainer" />
 </Schema>

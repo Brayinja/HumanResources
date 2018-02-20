@@ -7,10 +7,29 @@
       <Parameter Name="responseMessage" Mode="InOut" Type="String" />
       <Parameter Name="IdAdmin" Mode="InOut" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="PR_CrateEmployee">
+      <Parameter Name="Identification" Mode="In" Type="Decimal" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Lastname" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="MaritalState" Mode="In" Type="String" />
+      <Parameter Name="Adress" Mode="In" Type="String" />
+      <Parameter Name="Birthdate" Mode="In" Type="DateTime" />
+      <Parameter Name="responseMessage" Mode="InOut" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="PR_CreateAdmin">
       <Parameter Name="UserName" Mode="In" Type="String" />
       <Parameter Name="Password" Mode="In" Type="String" />
       <Parameter Name="responseMessage" Mode="InOut" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="PR_ViewEmployees" ReturnType="Collection(HumanResourcesModel.PR_ViewEmployees_Result)" />
   </EntityContainer>
+  <ComplexType Name="PR_ViewEmployees_Result">
+    <Property Type="Decimal" Name="Identification" Nullable="false" Precision="15" Scale="0" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="511" />
+    <Property Type="String" Name="Email" Nullable="false" />
+    <Property Type="String" Name="Phone" Nullable="false" />
+  </ComplexType>
 </Schema>
