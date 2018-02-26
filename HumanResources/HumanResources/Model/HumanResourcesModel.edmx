@@ -5,13 +5,31 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="HumanResourcesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="PR_AddPayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdEmployee" Type="int" Mode="In" />
+          <Parameter Name="Amount" Type="decimal" Mode="In" />
+          <Parameter Name="Description" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="PR_AddVacation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdEmployee" Type="int" Mode="In" />
+          <Parameter Name="StartDate" Type="date" Mode="In" />
+          <Parameter Name="EndDate" Type="date" Mode="In" />
+          <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
+        </Function>
         <Function Name="PR_AdminLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Username" Type="varchar" Mode="In" />
           <Parameter Name="Password" Type="varchar(max)" Mode="In" />
           <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
           <Parameter Name="IdAdmin" Type="int" Mode="InOut" />
         </Function>
-        <Function Name="PR_CrateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="PR_CreateAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar(max)" Mode="In" />
+          <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="PR_CreateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identification" Type="numeric" Mode="In" />
           <Parameter Name="Name" Type="varchar" Mode="In" />
           <Parameter Name="Lastname" Type="varchar" Mode="In" />
@@ -21,11 +39,24 @@
           <Parameter Name="MaritalState" Type="varchar" Mode="In" />
           <Parameter Name="Adress" Type="varchar(max)" Mode="In" />
           <Parameter Name="Birthdate" Type="date" Mode="In" />
+          <Parameter Name="HireDate" Type="date" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="Salary" Type="decimal" Mode="In" />
           <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
         </Function>
-        <Function Name="PR_CreateAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserName" Type="varchar" Mode="In" />
-          <Parameter Name="Password" Type="varchar(max)" Mode="In" />
+        <Function Name="PR_UpdateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Identification" Type="numeric" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Lastname" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Phone" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Gender" Type="varchar" Mode="In" />
+          <Parameter Name="MaritalState" Type="varchar" Mode="In" />
+          <Parameter Name="Adress" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Birthdate" Type="date" Mode="In" />
+          <Parameter Name="HireDate" Type="date" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="Salary" Type="decimal" Mode="In" />
           <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
         </Function>
         <Function Name="PR_ViewEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -36,13 +67,31 @@
     <edmx:ConceptualModels>
       <Schema Namespace="HumanResourcesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="HumanResourcesEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="PR_AddPayment">
+            <Parameter Name="IdEmployee" Mode="In" Type="Int32" />
+            <Parameter Name="Amount" Mode="In" Type="Decimal" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="Date" Mode="In" Type="DateTime" />
+            <Parameter Name="responseMessage" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PR_AddVacation">
+            <Parameter Name="IdEmployee" Mode="In" Type="Int32" />
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+            <Parameter Name="responseMessage" Mode="InOut" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="PR_AdminLogin">
             <Parameter Name="Username" Mode="In" Type="String" />
             <Parameter Name="Password" Mode="In" Type="String" />
             <Parameter Name="responseMessage" Mode="InOut" Type="String" />
             <Parameter Name="IdAdmin" Mode="InOut" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="PR_CrateEmployee">
+          <FunctionImport Name="PR_CreateAdmin">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="responseMessage" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PR_CreateEmployee">
             <Parameter Name="Identification" Mode="In" Type="Decimal" />
             <Parameter Name="Name" Mode="In" Type="String" />
             <Parameter Name="Lastname" Mode="In" Type="String" />
@@ -52,11 +101,24 @@
             <Parameter Name="MaritalState" Mode="In" Type="String" />
             <Parameter Name="Adress" Mode="In" Type="String" />
             <Parameter Name="Birthdate" Mode="In" Type="DateTime" />
+            <Parameter Name="HireDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="Salary" Mode="In" Type="Decimal" />
             <Parameter Name="responseMessage" Mode="InOut" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="PR_CreateAdmin">
-            <Parameter Name="UserName" Mode="In" Type="String" />
-            <Parameter Name="Password" Mode="In" Type="String" />
+          <FunctionImport Name="PR_UpdateEmployee">
+            <Parameter Name="Identification" Mode="In" Type="Decimal" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Lastname" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="MaritalState" Mode="In" Type="String" />
+            <Parameter Name="Adress" Mode="In" Type="String" />
+            <Parameter Name="Birthdate" Mode="In" Type="DateTime" />
+            <Parameter Name="HireDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="Salary" Mode="In" Type="Decimal" />
             <Parameter Name="responseMessage" Mode="InOut" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PR_ViewEmployees" ReturnType="Collection(HumanResourcesModel.PR_ViewEmployees_Result)" />
@@ -73,9 +135,12 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="HumanResourcesModelStoreContainer" CdmEntityContainer="HumanResourcesEntities" >
+          <FunctionImportMapping FunctionImportName="PR_AddPayment" FunctionName="HumanResourcesModel.Store.PR_AddPayment" />
+          <FunctionImportMapping FunctionImportName="PR_AddVacation" FunctionName="HumanResourcesModel.Store.PR_AddVacation" />
           <FunctionImportMapping FunctionImportName="PR_AdminLogin" FunctionName="HumanResourcesModel.Store.PR_AdminLogin" />
-          <FunctionImportMapping FunctionImportName="PR_CrateEmployee" FunctionName="HumanResourcesModel.Store.PR_CrateEmployee" />
           <FunctionImportMapping FunctionImportName="PR_CreateAdmin" FunctionName="HumanResourcesModel.Store.PR_CreateAdmin" />
+          <FunctionImportMapping FunctionImportName="PR_CreateEmployee" FunctionName="HumanResourcesModel.Store.PR_CreateEmployee" />
+          <FunctionImportMapping FunctionImportName="PR_UpdateEmployee" FunctionName="HumanResourcesModel.Store.PR_UpdateEmployee" />
           <FunctionImportMapping FunctionImportName="PR_ViewEmployees" FunctionName="HumanResourcesModel.Store.PR_ViewEmployees">
             <ResultMapping>
               <ComplexTypeMapping TypeName="HumanResourcesModel.PR_ViewEmployees_Result">

@@ -53,3 +53,26 @@ CREATE TABLE [ContactInformation](
 	CONSTRAINT FK_EmployeeContact FOREIGN KEY ([EmployeeId]) REFERENCES [Employee]([Id])
 )
 GO
+
+CREATE TABLE [EmployeePayment](
+	[Id] INT IDENTITY(1,1) NOT NULL,
+	[EmployeeId] INT NOT NULL,
+	[Amount] DECIMAL(32,5) NOT NULL,
+	[Description] VARCHAR(MAX) NOT NULL,
+	[Date] DATE NOT NULL,
+	[State] BIT NOT NULL,
+	CONSTRAINT PK_EmployeePayment PRIMARY KEY([Id]),
+	CONSTRAINT FK_EmployeePaymentContact FOREIGN KEY ([EmployeeId]) REFERENCES [Employee]([Id])
+)
+GO
+
+CREATE TABLE [EmployeeVacation](
+	[Id] INT IDENTITY(1,1) NOT NULL,
+	[EmployeeId] INT NOT NULL,
+	[StartDate] DATE NOT NULL,
+	[EndDate] DATE NOT NULL,
+	[State] BIT NOT NULL,
+	CONSTRAINT PK_EmployeeVacation PRIMARY KEY([Id]),
+	CONSTRAINT FK_EmployeeVacationContact FOREIGN KEY ([EmployeeId]) REFERENCES [Employee]([Id])
+)
+GO

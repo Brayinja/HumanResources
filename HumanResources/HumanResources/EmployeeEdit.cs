@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace HumanResources
 {
-    public partial class RandyOrton : Form
+    public partial class EmployeeEdit : Form
     {
-        public RandyOrton()
+        public EmployeeEdit()
         {
             InitializeComponent();
         }
-
-        
     }
 }

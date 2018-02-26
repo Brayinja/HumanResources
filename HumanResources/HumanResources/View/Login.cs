@@ -30,20 +30,20 @@ namespace HumanResources
             lblPassword.Visible = false;
         }
 
-        private void TxtPassword_Leave(object sender, EventArgs e)
-        {
-            ResetTextField(txtPassword, lblPassword);
-        }
-
         private void TxtUsername_Enter(object sender, EventArgs e)
         {
             txtOops.Visible = false;
             lblUsername.Visible = false;
         }
 
+        private void TxtPassword_Leave(object sender, EventArgs e)
+        {
+            system.ResetTextField(txtPassword, lblPassword);
+        }
+
         private void TxtUsername_Leave(object sender, EventArgs e)
         {
-            ResetTextField(txtUsername, lblUsername);
+            system.ResetTextField(txtUsername, lblUsername);
             
         }
 
@@ -63,7 +63,8 @@ namespace HumanResources
             if (system.Login(loginUsername, loginPassword))
             {
                 this.Hide();
-                new RandyOrton().Show();
+                View.MainMenu mainMenu = new View.MainMenu();
+                mainMenu.Show();
             }
             else
             {
@@ -92,12 +93,9 @@ namespace HumanResources
             this.SetBounds(locationX, locationY, 284, 257);
         }
 
-        private void ResetTextField(TextBox textField, Label lblRelation)
+        private void lblTitle_Click(object sender, EventArgs e)
         {
-            if (textField.Text == "")
-            {
-                lblRelation.Visible = true;
-            }
+
         }
     }
 }

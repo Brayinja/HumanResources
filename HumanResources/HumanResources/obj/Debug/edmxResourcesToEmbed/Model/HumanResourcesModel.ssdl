@@ -1,12 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="HumanResourcesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="PR_AddPayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEmployee" Type="int" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="Description" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Date" Type="date" Mode="In" />
+    <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="PR_AddVacation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEmployee" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
+  </Function>
   <Function Name="PR_AdminLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Username" Type="varchar" Mode="In" />
     <Parameter Name="Password" Type="varchar(max)" Mode="In" />
     <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
     <Parameter Name="IdAdmin" Type="int" Mode="InOut" />
   </Function>
-  <Function Name="PR_CrateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+  <Function Name="PR_CreateAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar(max)" Mode="In" />
+    <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="PR_CreateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Identification" Type="numeric" Mode="In" />
     <Parameter Name="Name" Type="varchar" Mode="In" />
     <Parameter Name="Lastname" Type="varchar" Mode="In" />
@@ -16,11 +34,24 @@
     <Parameter Name="MaritalState" Type="varchar" Mode="In" />
     <Parameter Name="Adress" Type="varchar(max)" Mode="In" />
     <Parameter Name="Birthdate" Type="date" Mode="In" />
+    <Parameter Name="HireDate" Type="date" Mode="In" />
+    <Parameter Name="Title" Type="varchar" Mode="In" />
+    <Parameter Name="Salary" Type="decimal" Mode="In" />
     <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
   </Function>
-  <Function Name="PR_CreateAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="UserName" Type="varchar" Mode="In" />
-    <Parameter Name="Password" Type="varchar(max)" Mode="In" />
+  <Function Name="PR_UpdateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Identification" Type="numeric" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="Lastname" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Phone" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Gender" Type="varchar" Mode="In" />
+    <Parameter Name="MaritalState" Type="varchar" Mode="In" />
+    <Parameter Name="Adress" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Birthdate" Type="date" Mode="In" />
+    <Parameter Name="HireDate" Type="date" Mode="In" />
+    <Parameter Name="Title" Type="varchar" Mode="In" />
+    <Parameter Name="Salary" Type="decimal" Mode="In" />
     <Parameter Name="responseMessage" Type="nvarchar" Mode="InOut" />
   </Function>
   <Function Name="PR_ViewEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />

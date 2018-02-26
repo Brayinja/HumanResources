@@ -55,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Controller.cs" />
+    <Compile Include="EmployeeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeEdit.Designer.cs">
+      <DependentUpon>EmployeeEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\HumanResourcesModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,11 +79,11 @@
     <Compile Include="Model\PR_ViewEmployees_Result.cs">
       <DependentUpon>HumanResourcesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="RandyOrton.cs">
+    <Compile Include="View\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RandyOrton.Designer.cs">
-      <DependentUpon>RandyOrton.cs</DependentUpon>
+    <Compile Include="View\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
@@ -87,8 +93,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="RandyOrton.resx">
-      <DependentUpon>RandyOrton.cs</DependentUpon>
+    <EmbeddedResource Include="View\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -124,6 +130,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model\HumanResourcesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HumanResourcesModel.edmx</DependentUpon>
@@ -134,9 +143,6 @@
       <DependentUpon>HumanResourcesModel.edmx</DependentUpon>
       <LastGenOutput>HumanResourcesModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

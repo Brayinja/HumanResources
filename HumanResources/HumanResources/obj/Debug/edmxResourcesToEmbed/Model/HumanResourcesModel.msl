@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="HumanResourcesModelStoreContainer" CdmEntityContainer="HumanResourcesEntities">
+    <FunctionImportMapping FunctionImportName="PR_AddPayment" FunctionName="HumanResourcesModel.Store.PR_AddPayment" />
+    <FunctionImportMapping FunctionImportName="PR_AddVacation" FunctionName="HumanResourcesModel.Store.PR_AddVacation" />
     <FunctionImportMapping FunctionImportName="PR_AdminLogin" FunctionName="HumanResourcesModel.Store.PR_AdminLogin" />
-    <FunctionImportMapping FunctionImportName="PR_CrateEmployee" FunctionName="HumanResourcesModel.Store.PR_CrateEmployee" />
     <FunctionImportMapping FunctionImportName="PR_CreateAdmin" FunctionName="HumanResourcesModel.Store.PR_CreateAdmin" />
+    <FunctionImportMapping FunctionImportName="PR_CreateEmployee" FunctionName="HumanResourcesModel.Store.PR_CreateEmployee" />
+    <FunctionImportMapping FunctionImportName="PR_UpdateEmployee" FunctionName="HumanResourcesModel.Store.PR_UpdateEmployee" />
     <FunctionImportMapping FunctionImportName="PR_ViewEmployees" FunctionName="HumanResourcesModel.Store.PR_ViewEmployees">
       <ResultMapping>
         <ComplexTypeMapping TypeName="HumanResourcesModel.PR_ViewEmployees_Result">
